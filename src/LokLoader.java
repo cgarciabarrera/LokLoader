@@ -44,9 +44,9 @@ class LokLoader
                 int speed = r.nextInt(HighSpeed-LowSpeed) + LowSpeed;
                 int accuracy = r.nextInt(HighSpeed-LowSpeed) + LowSpeed;
                 String resp = executePost("http://lokme.lextrendlabs.com/points/manual/","latitude=" + str[1] + "&longitude=" + str[0]+ "&speed=" + speed + "&accuracy=" + accuracy+ "&provider=gps"+ "&imei="+ (cont % 50) +args[1] );
-                if ((cont %10)==0)
+                if ((cont %100)==0)
                 {
-                    System.out.printf("10 puntos mas ");
+                    System.out.printf("100 puntos mas\n");
 
                 }
 
