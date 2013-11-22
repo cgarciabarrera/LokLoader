@@ -43,10 +43,10 @@ class LokLoader
                 cont ++;
                 int speed = r.nextInt(HighSpeed-LowSpeed) + LowSpeed;
                 int accuracy = r.nextInt(HighSpeed-LowSpeed) + LowSpeed;
-                String resp = executePost("http://localhost:3000/points/manual/","latitude=" + str[1] + "&longitude=" + str[0]+ "&speed=" + speed + "&accuracy=" + accuracy+ "&provider=gps"+ "&imei="+ (cont % 50) +args[1] );
-                if ((cont %100)==0)
+                String resp = executePost("http://lokme.lextrendlabs.com/points/manual/","latitude=" + str[1] + "&longitude=" + str[0]+ "&speed=" + speed + "&accuracy=" + accuracy+ "&provider=gps"+ "&imei="+ (cont % 50) +args[1] );
+                if ((cont %10)==0)
                 {
-                    //System.out.println(cont);
+                    System.out.printf("10 puntos mas ");
 
                 }
 
@@ -56,8 +56,8 @@ class LokLoader
         }catch (Exception e){//Catch exception if any
             System.err.println("Error: " + e.getMessage());
         }
-        String resp = executePost("http://localhost:3000/points/manual/","latitude=2.45&longitude=34.66&imei=1234554321");
-        System.out.println(resp);
+        //String resp = executePost("http://localhost:3000/points/manual/","latitude=2.45&longitude=34.66&imei=1234554321");
+        System.out.println("FIn");
 
 
 
